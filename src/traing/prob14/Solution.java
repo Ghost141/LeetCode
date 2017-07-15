@@ -2,28 +2,17 @@ package traing.prob14;
 
 public class Solution {
     public String longestCommonPrefix(String[] strs) {
-        if (strs.length == 0) {
-            return "";
-        }
-        int ind = 0;
+        if (strs.length == 0) return "";
         String firstString = strs[0];
 
-        while (true) {
-            boolean res = true;
-            for (String str : strs) {
-                if (ind == str.length() || firstString.length() == ind) {
-                    res = false;
-                    break;
-                }
-                res = res && str.charAt(ind) == firstString.charAt(ind);
+        for (int i = 0; i < firstString.length(); i++) {
+            final char c = firstString.charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                final String strJ = strs[j];
+                if (i >= strJ.length() || strJ.charAt(i) != c) return firstString.substring(0, i);
             }
-            if (!res) {
-                break;
-            }
-            ind++;
         }
-
-        return firstString.substring(0, ind);
+        return firstString;
     }
 
     public static void main(String[] args) {
