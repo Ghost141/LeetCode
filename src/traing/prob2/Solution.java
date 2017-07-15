@@ -1,5 +1,7 @@
 package traing.prob2;
 
+import traing.ListNode;
+
 public class Solution {
     private int i = 0;
     ListNode zero = new ListNode(0);
