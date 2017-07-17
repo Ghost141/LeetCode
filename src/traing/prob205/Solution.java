@@ -1,44 +1,33 @@
 package traing.prob205;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Isomorphic Strings
  * @author zhaokai
  */
 public class Solution {
+    /**
+     * Idea from https://discuss.leetcode.com/topic/13001/short-java-solution-without-maps/2.
+     * @param s
+     * @param t
+     * @return
+     */
     public boolean isIsomorphic(String s, String t) {
-        Map<String, String> map = new HashMap<>();
-        Map<String, String> mapBack = new HashMap<>();
+        int[] m1 = new int[256], m2 = new int[256];
 
 
         for (int i = 0; i < s.length(); i++) {
-
-            String si = getString(s, i);
-            String ti = getString(t, i);
-            if (map.containsKey(si)) {
-                if (!map.get(si).equals(ti)) {
-                    return false;
-                }
-            } else {
-                if (mapBack.containsKey(ti) && !mapBack.get(ti).equals(si)) {
-                    return false;
-                }
-                map.put(si, ti);
-                mapBack.put(ti, si);
+            if (m1[s.charAt(i)] != m2[t.charAt(i)]) {
+                return false;
             }
+            m1[s.charAt(i)] = m2[t.charAt(i)] = i + 1;
         }
         return true;
-    }
-
-    private String getString(String s, int i) {
-        return String.valueOf(s.charAt(i));
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
 
         System.out.println(s.isIsomorphic("ab", "aa"));
+        System.out.println(s.isIsomorphic("aa", "aa"));
     }
 }
