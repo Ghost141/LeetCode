@@ -13,24 +13,19 @@ public class Solution {
         int lines = wall.size();
 
         Map<Integer, Integer> map = new HashMap<>();
-        int width = 0;
+        int max = 0;
 
         for (List<Integer> line : wall) {
             int sum = 0;
-            for (Integer brick : line) {
+            for (int i = 0; i < line.size() - 1; i++) {
+                Integer brick = line.get(i);
                 sum += brick;
                 if (map.containsKey(sum)) {
                     map.put(sum, map.get(sum) + 1);
                 } else {
                     map.put(sum, 1);
                 }
-            }
-            width = sum;
-        }
-        int max = 0;
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (entry.getKey() != width) {
-                max = Math.max(entry.getValue(), max);
+                max = Math.max(max, map.get(sum));
             }
         }
         return lines - max;
