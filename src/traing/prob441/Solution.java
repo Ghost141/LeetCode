@@ -7,16 +7,17 @@ package traing.prob441;
  */
 public class Solution {
     public int arrangeCoins(int n) {
-        long sum = 0;
-        for (int i = 1; i < Integer.MAX_VALUE; i++) {
-            sum += i;
-            if (sum == n) {
-                return i;
-            } else if (sum > n) {
-                return i - 1;
+        int start = 0, end = n, mid = 0;
+        while (start <= end) {
+            mid = (start + end) / 2;
+            if (0.5 * mid * mid + 0.5 * mid <= n) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
             }
         }
-        return 0;
+
+        return start - 1;
     }
 
     public static void main(String[] args) {
