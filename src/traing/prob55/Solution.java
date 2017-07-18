@@ -7,24 +7,13 @@ package traing.prob55;
  */
 public class Solution {
     public boolean canJump(int[] nums) {
-        int numsLength = nums.length;
-        int[] reach = new int[numsLength];
+        int maxLocation = 0;
 
-        reach[0] = 1;
-
-        for (int i = 0; i < numsLength - 1; i++) {
-            if (nums[i] != 0) {
-                int farthest = i + nums[i];
-                for (int start = i + 1; start <= farthest; start++ ) {
-                    reach[Math.min(start, numsLength - 1)] = 1;
-                }
-            }
+        for (int i = 0; i < nums.length; i++) {
+            if (maxLocation < i) return false;
+            if (maxLocation >= nums.length) return true;
+            maxLocation = Math.max(maxLocation, i + nums[i]);
         }
-
-        for (int i = 0; i < reach.length; i++) {
-            if (reach[i] == 0) return false;
-        }
-
         return true;
     }
 
