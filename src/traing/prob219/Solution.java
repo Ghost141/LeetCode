@@ -1,9 +1,6 @@
 package traing.prob219;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Contains Duplicate II
@@ -13,23 +10,11 @@ import java.util.Map;
  */
 public class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        Map<Integer, List<Integer>> val2Ind = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
 
         for (int i = 0; i < nums.length; i++) {
-            int val = nums[i];
-            List<Integer> indList;
-            if (val2Ind.containsKey(val)) {
-                indList = val2Ind.get(val);
-                for (Integer ind : indList) {
-                    if (i - ind <= k) {
-                        return true;
-                    }
-                }
-            } else {
-                indList = new ArrayList<>();
-            }
-            indList.add(i);
-            val2Ind.put(val, indList);
+            if (i > k) set.remove(nums[i - k - 1]);
+            if (!set.add(nums[i])) return true;
         }
 
         return false;
