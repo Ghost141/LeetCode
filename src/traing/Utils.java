@@ -14,4 +14,12 @@ public final class Utils {
         System.out.println("result: [" + joiner.toString() + "].");
 
     }
+
+    public static <T> void printArray(T[] data) {
+        System.out.print("[");
+        for (int i = 0; i < data.length; i++) {
+            System.out.print(data[i]);
+        }
+        System.out.println("]");
+    }
 }
