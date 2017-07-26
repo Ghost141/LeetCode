@@ -2,9 +2,6 @@ package traing.prob283;
 
 import traing.Utils;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 /**
  * Move Zeroes
  * Link: https://leetcode.com/problems/move-zeroes/#/description
@@ -13,22 +10,17 @@ import java.util.Queue;
  */
 public class Solution {
     public void moveZeroes(int[] nums) {
-        Queue<Integer> indexQueue = new PriorityQueue<>();
-        int i = 0;
+        for (int lastNonZeroFoundAt = 0, cur = 0; cur < nums.length; cur++) {
+            if (nums[cur] != 0) {
+                swap(nums, lastNonZeroFoundAt++, cur);
+            }
+        }
+    }
 
-        for (; i < nums.length; i++) {
-            if (nums[i] != 0) indexQueue.add(i);
-        }
-
-        i = 0;
-        while (!indexQueue.isEmpty()) {
-            final Integer ind = indexQueue.poll();
-            nums[i] = nums[ind];
-            i++;
-        }
-        for (;i < nums.length; i++) {
-            nums[i] = 0;
-        }
+    private void swap(int[] data, int a, int b) {
+        int tmp = data[a];
+        data[a] = data[b];
+        data[b] = tmp;
     }
 
     public static void main(String[] args) {
