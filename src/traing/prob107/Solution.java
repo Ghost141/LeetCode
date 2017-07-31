@@ -3,8 +3,8 @@ package traing.prob107;
 import traing.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Binary Tree Level Order Traversal II
@@ -18,8 +18,7 @@ public class Solution {
         List<TreeNode> nodeList = new ArrayList<>();
         nodeList.add(root);
 
-        Stack<List<Integer>> stack = new Stack<>();
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new LinkedList<>();
         List<Integer> levelValue = new ArrayList<>();
 
         int start = 0, end = 1, level = 1;
@@ -30,14 +29,10 @@ public class Solution {
             end += add(nodeList, node.right);
             levelValue.add(node.val);
             if (++start == level) {
-                stack.push(levelValue);
+                result.add(0, levelValue);
                 levelValue = new ArrayList<>();
                 level = end;
             }
-        }
-
-        while (!stack.empty()) {
-            result.add(stack.pop());
         }
 
         return result;
