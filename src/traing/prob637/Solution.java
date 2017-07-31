@@ -14,43 +14,27 @@ import java.util.List;
  */
 public class Solution {
     public List<Double> averageOfLevels(TreeNode root) {
-        if (root == null) return new ArrayList<>();
-        List<TreeNode> nodeList = new ArrayList<>();
-        nodeList.add(root);
         List<Double> result = new ArrayList<>();
-        int start = 0, level = 1, end = 1;
-        double sum = 0, count = 0;
+        List<Integer> count = new ArrayList<>();
+        dfsCal(root, 0, count, result);
 
-        while (start != end) {
-            final TreeNode node = nodeList.get(start);
-            end += add(nodeList, node.left);
-            end += add(nodeList, node.right);
-
-            sum += node.val;
-            count++;
-            if (++start == level) {
-                level = end;
-                result.add(sum / count);
-                sum = count = 0;
-            }
+        for (int i = 0; i < result.size(); i++) {
+            result.set(i, result.get(i) / count.get(i));
         }
 
         return result;
     }
-    private int add(List<TreeNode> nodeList, TreeNode node) {
-        if (node != null) {
-            nodeList.add(node);
-            return 1;
-        }
-        return 0;
-    }
 
-    public static void a(int val) {
-        val += 2;
-    }
-    public static void main(String[] args) {
-        int sum = 0;
-        a(sum);
-        System.out.println(sum);
+    private void dfsCal(TreeNode node, int level, List<Integer> count, List<Double> result) {
+        if (node == null) return;
+        if (level < result.size()) {
+            result.set(level, result.get(level) + node.val);
+            count.set(level, count.get(level) + 1);
+        } else {
+            result.add((double) node.val);
+            count.add(1);
+        }
+        dfsCal(node.left, level + 1, count, result);
+        dfsCal(node.right, level + 1, count, result);
     }
 }
