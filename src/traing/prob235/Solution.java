@@ -15,34 +15,10 @@ import java.util.Queue;
  */
 public class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        Queue<TreeNode> pQueue = record(root, p);
-        Queue<TreeNode> qQueue = record(root, q);
-        TreeNode result = null;
-
-        while (true) {
-            TreeNode q1 = qQueue.poll();
-            TreeNode p1 = pQueue.poll();
-            if (p1 == null || q1 == null || p1.val != q1.val) {
-                return result;
-            } else {
-                result = p1;
-            }
+        while ((root.val - p.val) * (root.val - q.val) > 0) {
+            root = root.val > p.val ? root.left : root.right;
         }
-    }
-
-    private Queue<TreeNode> record(TreeNode root, TreeNode target) {
-        Queue<TreeNode> recordList = new LinkedList<>();
-        TreeNode node = root;
-        while (true) {
-            recordList.add(node);
-            if (node.val == target.val) {
-                return recordList;
-            } else if (node.val > target.val) {
-                node = node.left;
-            } else {
-                node = node.right;
-            }
-        }
+        return root;
     }
 
     public static void main(String[] args) {
