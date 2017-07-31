@@ -35,7 +35,7 @@ public class Solution {
                     temp.add(node.right);
                 }
             }
-            result.add((double) (sum / count));
+            result.add(sum * 1.0 / count);
             queue = temp;
         }
         return result;
