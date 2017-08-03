@@ -1,8 +1,5 @@
 package traing.prob264;
 
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Set;
 
 /**
  * Ugly Number II
@@ -14,30 +11,21 @@ import java.util.Set;
  */
 public class Solution {
     public int nthUglyNumber(int n) {
-        if (n <= 0) return 0;
-        int count = 0, start = 1;
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        HashSet<Integer> uglySet = new HashSet<>();
-        priorityQueue.add(start);
-        int uglyNumber = 0;
-        while (count != n) {
-            uglyNumber = priorityQueue.poll();
-            updateQueue(uglySet, priorityQueue, uglyNumber);
-            count++;
+        int[] res = new int[n];
+        res[0] = 1;
+        int ug2 = 2, ug3 = 3, ug5 = 5;
+        int ind2 = 0, ind3 = 0, ind5 = 0;
+        for (int i = 1; i < n; i++) {
+            int min = Math.min(Math.min(ug2, ug3), ug5);
+            res[i] = min;
+            if (ug2 == min) ug2 = 2 * res[++ind2];
+            if (ug3 == min) ug3 = 3 * res[++ind3];
+            if (ug5 == min) {
+                ug5 = 5 * res[++ind5];
+            }
         }
 
-        return uglyNumber;
-    }
-    private void updateQueue(Set<Integer> uglySet, PriorityQueue<Integer> uglyQueue, int ugly) {
-        for (int i = 2; i < 6; i++) {
-            int next = i * ugly;
-            if (next > 0 && next > ugly) {
-                if (!uglySet.contains(next)) {
-                    uglyQueue.add(next);
-                    uglySet.add(next);
-                }
-            } else break;
-        }
+        return res[n - 1];
     }
 
     public static void main(String[] args) {
