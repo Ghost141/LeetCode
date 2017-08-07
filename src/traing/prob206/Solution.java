@@ -8,17 +8,15 @@ import traing.ListNode;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - Use Recursive solution to solve this problem.
  * @since 1.0 - 8/7/17
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode cur = head, prev = null;
-        while (cur != null) {
-            ListNode tmp = cur.next;
-            cur.next = prev;
-            prev = cur;
-            cur = tmp;
-        }
-        return prev;
+        if (head == null || head.next == null) return head;
+        ListNode next = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return next;
     }
 }
