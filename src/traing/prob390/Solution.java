@@ -10,6 +10,10 @@ package traing.prob390;
  */
 public class Solution {
     public int lastRemaining(int n) {
+        return recursive(n);
+    }
+
+    private int iterative(int n) {
         int head = 1, remaining = n, step = 1;
         boolean fromLeft = true;
         while (remaining > 1) {
@@ -22,6 +26,10 @@ public class Solution {
             remaining /= 2;
         }
         return head;
+    }
+
+    private int recursive(int n) {
+        return n == 1 ? 1 : 2 * (n / 2 + 1 - recursive(n / 2));
     }
 
     public static void main(String[] args) {
