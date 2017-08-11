@@ -15,6 +15,14 @@ public final class Utils {
 
     }
 
+    public static void printStrArr(String[] input) {
+        final StringJoiner joiner = new StringJoiner(", ");
+        for (String i : input) {
+            joiner.add(i);
+        }
+        System.out.println("result: [" + joiner.toString() + "].");
+    }
+
     public static <T> void printArray(T[] data) {
         System.out.print("[");
         for (int i = 0; i < data.length; i++) {
