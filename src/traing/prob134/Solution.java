@@ -10,23 +10,18 @@ package traing.prob134;
  */
 public class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
-        int n = gas.length;
-        for (int i = 0; i < n; i++) {
-            int tank = 0;
-            boolean success = true;
-            for (int j = 0; j < n; j++) {
-                int p = (i + j) % n;
-                tank += gas[p];
-                if (tank < cost[p]) {
-                    success = false;
-                    break;
-                } else {
-                    tank -= cost[p];
-                }
+        int start = gas.length - 1, end = 0;
+        int sum = gas[start] - cost[start];
+        while (start > end) {
+            if (sum >= 0) {
+                sum += gas[end] - cost[end];
+                end++;
+            } else {
+                start--;
+                sum += gas[start] - cost[start];
             }
-            if (success) return i;
         }
-        return -1;
+        return sum >= 0 ? start : -1;
     }
 
     public static void main(String[] args) {
