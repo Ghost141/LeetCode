@@ -21,7 +21,7 @@ public class DataGenerator {
         String[] split = s.split(",");
         int[] res = new int[split.length];
         for (int i = 0; i < split.length; i++) {
-            res[i] = Integer.valueOf(split[i]);
+            res[i] = Integer.valueOf(split[i].trim());
         }
         return res;
     }
