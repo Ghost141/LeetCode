@@ -8,10 +8,12 @@ import utils.DataGenerator;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - The LeetCode official top down dp solution. I don't think it's better than mine...
  * @since 1.0 - 8/18/17
  */
 public class Solution {
     int[] change;
+
     public int coinChange(int[] coins, int amount) {
         if (amount == 0) return 0;
         if (change == null) {
@@ -38,6 +40,23 @@ public class Solution {
 
         change[amount] = step == 0 ? -1 : step;
         return change[amount];
+    }
+
+    private int coinChangeTopDown(int[] coins, int amount) {
+        if (amount < 1) return 0;
+        return topDown(coins, amount, new int[amount + 1]);
+    }
+    private int topDown(int[] coins, int rem, int[] count) {
+        if (rem < 0) return -1;
+        if (rem == 0) return 0;
+        if (count[rem] != 0) return count[rem];
+        int min = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            int res = topDown(coins, rem - coin, count);
+            if (res >= 0 && res < min) min = res + 1;
+        }
+        count[rem] = (min == Integer.MAX_VALUE ? -1 : min);
+        return count[rem];
     }
 
     public static void main(String[] args) {
