@@ -2,6 +2,8 @@ package traing.prob322;
 
 import utils.DataGenerator;
 
+import java.util.Arrays;
+
 /**
  * Coin Change
  * Link: https://leetcode.com/problems/coin-change/description/
@@ -57,6 +59,21 @@ public class Solution {
         }
         count[rem] = (min == Integer.MAX_VALUE ? -1 : min);
         return count[rem];
+    }
+
+    private int coinChangeBottomUp(int[] coins, int amount) {
+        int max = amount + 1;
+        int[] change = new int[amount + 1];
+        Arrays.fill(change, max);
+        change[0] = 0;
+        for (int i = 1; i <= amount; i++) {
+            for (int j = 0; j < coins.length; j++) {
+                if (coins[j] <= i) {
+                    change[i] = Math.min(change[i], change[i - coins[i]] + 1);
+                }
+            }
+        }
+        return change[amount] > amount ? -1 : change[amount];
     }
 
     public static void main(String[] args) {
