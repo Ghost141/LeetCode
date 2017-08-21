@@ -15,6 +15,13 @@ public final class Utils {
 
     }
 
+    public static void printIntMatrix(int[][] matrix) {
+        final StringJoiner joiner = new StringJoiner(", ");
+        for (int i = 0; i < matrix.length; i++) {
+
+        }
+    }
+
     public static void printStrArr(String[] input) {
         final StringJoiner joiner = new StringJoiner(", ");
         for (String i : input) {
@@ -24,10 +31,10 @@ public final class Utils {
     }
 
     public static <T> void printArray(T[] data) {
-        System.out.print("[");
-        for (int i = 0; i < data.length; i++) {
-            System.out.print(data[i]);
+        final StringJoiner joiner = new StringJoiner(", ");
+        for (T i : data) {
+            joiner.add(String.valueOf(i));
         }
-        System.out.println("]");
+        System.out.println("result: [" + joiner.toString() + "].");
     }
 }
