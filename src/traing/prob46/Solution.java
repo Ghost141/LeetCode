@@ -25,9 +25,9 @@ public class Solution {
     private void backtrackPermutation(List<List<Integer>> list, List<Integer> perm, int[] nums) {
         if (perm.size() == nums.length) list.add(new ArrayList<>(perm));
         else {
-            for (int i = 1; i <= nums.length; i++) {
-                if (perm.contains(i)) continue;
-                perm.add(i);
+            for (int i = 0; i < nums.length; i++) {
+                if (perm.contains(nums[i])) continue;
+                perm.add(nums[i]);
                 backtrackPermutation(list, perm, nums);
                 perm.remove(perm.size() - 1);
             }
