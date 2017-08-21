@@ -9,6 +9,8 @@ import java.util.List;
  * Permutations
  * Link: https://leetcode.com/problems/permutations/description/
  *
+ * A good discuss here: https://discuss.leetcode.com/topic/46162/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partioning
+ *
  * @author zhaokai
  * @version 1.0
  * @since 1.0 - 8/17/17
