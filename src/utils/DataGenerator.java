@@ -27,6 +27,7 @@ public class DataGenerator {
     }
 
     public static int[][] createIntMatrix(String s) {
+        if (s.trim().equals("")) return new int[][]{};
         String[] rows = s.split("\\|");
         int[][] matrix = new int[rows.length][rows[0].split(",").length];
         for (int i = 0; i < rows.length; i++) {
