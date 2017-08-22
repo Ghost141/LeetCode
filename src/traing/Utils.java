@@ -16,10 +16,17 @@ public final class Utils {
     }
 
     public static void printIntMatrix(int[][] matrix) {
-        final StringJoiner joiner = new StringJoiner(", ");
+        final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < matrix.length; i++) {
-
+            sb.append("[");
+            final StringJoiner joiner = new StringJoiner(", ");
+            for (int j = 0; j < matrix[0].length; j++) {
+                joiner.add(String.valueOf(matrix[i][j]));
+            }
+            sb.append(joiner.toString());
+            sb.append("]\n");
         }
+        System.out.println(sb.toString());
     }
 
     public static void printStrArr(String[] input) {
