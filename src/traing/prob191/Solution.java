@@ -1,5 +1,13 @@
 package traing.prob191;
 
+/**
+ * Number of 1 Bits
+ * Link: https://leetcode.com/problems/number-of-1-bits/description/
+ *
+ * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 6/20/17
+ */
 public class Solution {
     public int hammingWeight(int x) {
         int count = 0;
