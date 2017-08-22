@@ -19,6 +19,15 @@ public class Solution {
         return count;
     }
 
+    private int flip(int x) {
+        int count = 0;
+        while (x != 0) {
+            x &= (x - 1);
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         final Solution s = new Solution();
 
