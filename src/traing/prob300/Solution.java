@@ -1,7 +1,8 @@
 package traing.prob300;
 
-import traing.Utils;
 import utils.DataGenerator;
+
+import java.util.Arrays;
 
 /**
  * Longest Increasing Subsequence
@@ -13,6 +14,10 @@ import utils.DataGenerator;
  */
 public class Solution {
     public int lengthOfLIS(int[] nums) {
+        return dpAndBS(nums);
+    }
+
+    private int dp(int[] nums) {
         if (nums.length == 0) return 0;
         int[] dp = new int[nums.length];
         dp[0] = 1;
@@ -27,25 +32,16 @@ public class Solution {
         return res;
     }
 
-    public int _lengthOfLIS(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
+    private int dpAndBS(int[] nums) {
         int[] dp = new int[nums.length];
-        dp[0] = 1;
-        int maxans = 1;
-        for (int i = 1; i < dp.length; i++) {
-            int maxval = 0;
-            for (int j = 0; j < i; j++) {
-                if (nums[i] > nums[j]) {
-                    maxval = Math.max(maxval, dp[j]);
-                }
-            }
-            dp[i] = maxval + 1;
-            maxans = Math.max(maxans, dp[i]);
+        int len = 0;
+        for (int num : nums) {
+            int ind = Arrays.binarySearch(dp, 0, len, num);
+            if (ind < 0) ind = -(ind + 1);
+            dp[ind] = num;
+            if (ind == len) len++;
         }
-        Utils.printai(dp);
-        return maxans;
+        return len;
     }
 
     public static void main(String[] args) {
