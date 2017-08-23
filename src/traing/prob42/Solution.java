@@ -1,5 +1,7 @@
 package traing.prob42;
 
+import utils.DataGenerator;
+
 /**
  * Trapping Rain Water
  * Link: https://leetcode.com/problems/trapping-rain-water/description/
@@ -34,5 +36,11 @@ public class Solution {
         }
 
         return area;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+
+        System.out.println(s.trap(DataGenerator.createIntArray("4,2,3")));
     }
 }
