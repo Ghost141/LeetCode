@@ -8,23 +8,22 @@ import utils.DataGenerator;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - DP solution
  * @since 1.0 - 8/28/17
  */
 public class Solution {
     public int combinationSum4(int[] nums, int target) {
-        int[] count = new int[1];
-        backtrack(count, nums, target, 0);
-        return count[0];
-    }
+        int[] dp = new int[target + 1];
+        dp[0] = 1;
 
-    private void backtrack(int[] count, int[] nums, int remain, int start) {
-        if (remain == 0) count[0]++;
-        else if (remain < 0) return;
-        else {
-            for (int i = start; i < nums.length; i++) {
-                backtrack(count, nums, remain - nums[i], start);
+        for (int i = 1; i <= target; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (i >= nums[j]) {
+                    dp[i] += dp[i - nums[j]];
+                }
             }
         }
+        return dp[target];
     }
 
     public static void main(String[] args) {
