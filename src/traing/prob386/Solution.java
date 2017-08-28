@@ -28,4 +28,23 @@ public class Solution {
         }
         return res;
     }
+
+    private List<Integer> dfsSolution(int n) {
+        List<Integer> res = new ArrayList<>();
+        for (int i = 1; i < 10; i++) {
+            _dfs(res, i, n);
+        }
+        return res;
+    }
+
+    private void _dfs(List<Integer> list, int cur, int n) {
+        if (cur > n) return;
+        else {
+            list.add(cur);
+            for (int i = 0; i < 10; i++) {
+                if (cur * 10 + i > n) return;
+                else _dfs(list, cur * 10 + i, n);
+            }
+        }
+    }
 }
