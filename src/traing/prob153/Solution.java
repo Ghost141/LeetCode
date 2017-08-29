@@ -12,7 +12,7 @@ public class Solution {
     public int findMin(int[] nums) {
         int start = 0, end = nums.length - 1, middle = (start + end) / 2;
         while (start != end) {
-            if (nums[middle] < nums[end]) {
+            if (nums[middle] <= nums[end]) {
                 end = middle;
             } else {
                 start = middle + 1;
@@ -25,6 +25,9 @@ public class Solution {
     public static void main(String[] args) {
         final Solution s = new Solution();
 
-        s.findMin(new int[] {1});
+        System.out.println(s.findMin(new int[]{2, 3, 1, 1}));
+        System.out.println(s.findMin(new int[]{5, 1, 1, 1, 2, 2, 3, 4}));
+        System.out.println(s.findMin(new int[]{1, 2, 2}));
+        System.out.println(s.findMin(new int[]{2, 1}));
     }
 }
