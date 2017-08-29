@@ -2,8 +2,11 @@ package traing.prob121;
 
 /**
  * Best Time to Buy and Sell Stock.
+ * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
  *
  * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 7/18/17
  */
 public class Solution {
 
