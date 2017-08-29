@@ -8,24 +8,17 @@ import utils.DataGenerator;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - Simple version solution.
  * @since 1.0 - 8/29/17
  */
 public class Solution {
     public int maxProfit(int[] prices) {
         if (prices.length == 0) return 0;
-        Integer min = prices[0], max = null;
         int profit = 0;
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] < prices[i - 1]) {
-                profit += max == null ? 0 : max - min;
-                max = null;
-                min = prices[i];
-            } else {
-                max = Math.max(max == null ? Integer.MIN_VALUE : max, prices[i]);
-            }
-
-        }
-        return profit + (max == null ? 0 : (max - min));
+        for (int i = 1; i < prices.length; i++)
+            if (prices[i] > prices[i - 1])
+                profit += prices[i] - prices[i - 1];
+        return profit;
     }
 
     public static void main(String[] args) {
