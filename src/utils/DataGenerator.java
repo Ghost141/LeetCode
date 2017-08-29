@@ -45,6 +45,19 @@ public class DataGenerator {
         return matrix;
     }
 
+    public static char[][] createCharBoard(String input) {
+        if (input.trim().equals("")) return new char[][]{};
+        String[] rows = input.split("\\|");
+        char[][] board = new char[rows.length][rows[0].length()];
+        for (int i = 0; i < rows.length; i++) {
+            String cols = rows[i];
+            for (int j = 0; j < cols.length(); j++) {
+                board[i][j] = cols.charAt(j);
+            }
+        }
+        return board;
+    }
+
     public static ListNode buildListNode(String s) {
         String[] nodes = s.split("-");
         if (nodes.length == 0) return null;
