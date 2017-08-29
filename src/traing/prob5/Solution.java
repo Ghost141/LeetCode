@@ -16,15 +16,15 @@ public class Solution {
     private String dpSolution(String s) {
         if (s == null || s.length() == 0) return "";
         final int n = s.length();
-        boolean[][] p = new boolean[n][n];
+        boolean[][] palindrome = new boolean[n][n];
         int start = 0, end = 0, maxLen = 0;
 
         for (int j = 0; j < n; j++) {
             for (int i = 0; i <= j; i++) {
-                if (s.charAt(i) == s.charAt(j) && (j - i <= 2 || p[i + 1][j - 1])) {
-                    p[i][j] = true;
+                if (s.charAt(i) == s.charAt(j) && (j - i <= 2 || palindrome[i + 1][j - 1])) {
+                    palindrome[i][j] = true;
                 }
-                if (p[i][j] && maxLen < (j - i + 1)) {
+                if (palindrome[i][j] && maxLen < (j - i + 1)) {
                     maxLen = j - i + 1;
                     start = i;
                     end = j + 1;
