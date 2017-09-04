@@ -17,6 +17,10 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "" + this.val;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(this.val);
+        if (this.left != null) stringBuilder.append("(").append(this.left).append(")");
+        if (this.right != null) stringBuilder.append("(").append(this.right).append(")");
+        return stringBuilder.toString();
     }
 }
