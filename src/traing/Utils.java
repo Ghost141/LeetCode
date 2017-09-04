@@ -30,6 +30,20 @@ public final class Utils {
         System.out.println(sb.toString());
     }
 
+    public static void printCharMatrix(char[][] matrix) {
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < matrix.length; i++) {
+            sb.append("[");
+            final StringJoiner joiner = new StringJoiner(", ");
+            for (int j = 0; j < matrix[0].length; j++) {
+                joiner.add(Character.toString(matrix[i][j]));
+            }
+            sb.append(joiner.toString());
+            sb.append("]\n");
+        }
+        System.out.println(sb.toString());
+    }
+
     public static void matrix(int[][] matrix, int[]... points) {
         char c = 'a';
         final StringBuilder sb = new StringBuilder();
