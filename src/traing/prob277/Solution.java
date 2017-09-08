@@ -1,6 +1,6 @@
 package traing.prob277;
 
-import traing.Relation;
+import traing.common.Relation;
 import utils.DataGenerator;
 
 /**
