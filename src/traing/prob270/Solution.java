@@ -1,6 +1,6 @@
 package traing.prob270;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Closest Binary Search Tree Value

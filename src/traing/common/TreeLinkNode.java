@@ -1,4 +1,4 @@
-package traing;
+package traing.common;
 
 /**
  * The public tree link node class.

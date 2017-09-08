@@ -1,6 +1,6 @@
 package traing.prob2;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Add Two Numbers

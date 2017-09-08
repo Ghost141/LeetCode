@@ -1,6 +1,6 @@
 package traing.prob82;
 
-import traing.ListNode;
+import traing.common.ListNode;
 import utils.DataGenerator;
 
 /**

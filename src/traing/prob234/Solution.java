@@ -1,6 +1,6 @@
 package traing.prob234;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 import java.util.Stack;
 

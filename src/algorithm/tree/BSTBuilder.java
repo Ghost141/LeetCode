@@ -1,6 +1,6 @@
 package algorithm.tree;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Binary Search Tree(BST) builder.

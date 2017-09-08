@@ -1,6 +1,6 @@
 package traing.prob173;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

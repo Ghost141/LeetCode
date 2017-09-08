@@ -1,6 +1,6 @@
 package traing.prob230;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Kth Smallest Element in a BST

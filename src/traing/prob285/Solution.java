@@ -1,6 +1,6 @@
 package traing.prob285;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Inorder Successor in BST

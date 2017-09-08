@@ -1,6 +1,6 @@
 package traing.prob226;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Invert Binary Tree

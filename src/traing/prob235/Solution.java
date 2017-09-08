@@ -1,9 +1,6 @@
 package traing.prob235;
 
-import traing.TreeNode;
-
-import java.util.LinkedList;
-import java.util.Queue;
+import traing.common.TreeNode;
 
 /**
  * Lowest Common Ancestor of a Binary Search Tree

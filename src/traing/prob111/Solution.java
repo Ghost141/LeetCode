@@ -1,6 +1,6 @@
 package traing.prob111;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Minimum Depth of Binary Tree

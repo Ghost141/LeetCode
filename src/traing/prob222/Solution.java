@@ -1,6 +1,6 @@
 package traing.prob222;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Count Complete Tree Nodes

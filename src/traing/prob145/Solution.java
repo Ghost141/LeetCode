@@ -1,6 +1,6 @@
 package traing.prob145;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 import java.util.*;
 

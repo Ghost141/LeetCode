@@ -1,6 +1,6 @@
 package traing.prob107;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

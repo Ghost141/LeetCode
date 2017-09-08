@@ -1,6 +1,6 @@
 package traing.prob654;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 import utils.DataGenerator;
 
 /**

@@ -1,6 +1,6 @@
 package traing.prob206;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Reverse Linked List

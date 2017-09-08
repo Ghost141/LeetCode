@@ -1,6 +1,6 @@
 package traing.prob203;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Remove Linked List Elements

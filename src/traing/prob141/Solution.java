@@ -1,6 +1,6 @@
 package traing.prob141;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Linked List Cycle

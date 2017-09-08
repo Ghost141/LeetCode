@@ -1,6 +1,6 @@
 package traing.prob110;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Balanced Binary Tree

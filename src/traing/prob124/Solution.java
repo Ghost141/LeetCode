@@ -1,6 +1,6 @@
 package traing.prob124;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Binary Tree Maximum Path Sum

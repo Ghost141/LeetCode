@@ -1,7 +1,6 @@
 package traing.prob103;
 
-import traing.TreeNode;
-import utils.DataGenerator;
+import traing.common.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

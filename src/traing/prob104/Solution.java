@@ -1,6 +1,6 @@
 package traing.prob104;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Maximum Depth of Binary Tree

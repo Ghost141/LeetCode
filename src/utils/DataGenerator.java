@@ -1,6 +1,6 @@
 package utils;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Test data generator

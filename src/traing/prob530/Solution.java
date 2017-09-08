@@ -1,6 +1,6 @@
 package traing.prob530;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Minimum Absolute Difference in BST

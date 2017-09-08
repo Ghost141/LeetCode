@@ -1,6 +1,6 @@
 package traing.prob572;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Subtree of Another Tree

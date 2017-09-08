@@ -1,6 +1,6 @@
 package traing.prob508;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 import java.util.*;
 

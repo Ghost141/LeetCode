@@ -1,6 +1,6 @@
 package traing.prob617;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 public class Solution {
 

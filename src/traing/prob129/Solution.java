@@ -1,6 +1,6 @@
 package traing.prob129;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Sum Root to Leaf Numbers

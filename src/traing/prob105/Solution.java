@@ -1,6 +1,6 @@
 package traing.prob105;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Construct Binary Tree from Preorder and Inorder Traversal

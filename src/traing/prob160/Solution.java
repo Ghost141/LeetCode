@@ -1,6 +1,6 @@
 package traing.prob160;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Intersection of Two Linked Lists

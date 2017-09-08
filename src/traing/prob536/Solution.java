@@ -1,6 +1,6 @@
 package traing.prob536;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Construct Binary Tree from String

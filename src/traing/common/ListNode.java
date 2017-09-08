@@ -1,4 +1,4 @@
-package traing;
+package traing.common;
 
 /**
  * Common List node for LeetCode problem

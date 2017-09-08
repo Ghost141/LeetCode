@@ -1,6 +1,6 @@
 package traing.prob337;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * House Robber III

@@ -1,6 +1,6 @@
 package traing.prob86;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Partition List

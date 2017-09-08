@@ -1,6 +1,6 @@
 package traing.prob133;
 
-import traing.UndirectedGraphNode;
+import traing.common.UndirectedGraphNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

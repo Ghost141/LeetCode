@@ -1,6 +1,6 @@
 package traing.prob138;
 
-import traing.RandomListNode;
+import traing.common.RandomListNode;
 
 import java.util.HashMap;
 import java.util.Map;

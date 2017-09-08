@@ -1,6 +1,6 @@
 package traing.prob237;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 public class Solution {
     public void deleteNode(ListNode node) {

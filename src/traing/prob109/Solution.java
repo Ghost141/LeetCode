@@ -1,7 +1,7 @@
 package traing.prob109;
 
-import traing.ListNode;
-import traing.TreeNode;
+import traing.common.ListNode;
+import traing.common.TreeNode;
 
 /**
  * Convert Sorted List to Binary Search Tree

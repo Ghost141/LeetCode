@@ -1,6 +1,6 @@
 package traing.prob236;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Lowest Common Ancestor of a Binary Tree

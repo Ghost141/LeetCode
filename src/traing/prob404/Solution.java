@@ -1,6 +1,6 @@
 package traing.prob404;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 public class Solution {
     public int sumOfLeftLeaves(TreeNode root) {

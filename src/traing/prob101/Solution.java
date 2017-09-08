@@ -1,6 +1,6 @@
 package traing.prob101;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

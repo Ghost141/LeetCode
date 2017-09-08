@@ -1,6 +1,6 @@
 package traing.prob437;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

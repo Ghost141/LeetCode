@@ -1,6 +1,6 @@
 package traing.prob19;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Remove Nth Node From End of List

@@ -1,6 +1,6 @@
 package traing.prob445;
 
-import traing.ListNode;
+import traing.common.ListNode;
 
 /**
  * Add Two Numbers II

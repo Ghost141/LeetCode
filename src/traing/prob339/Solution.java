@@ -1,6 +1,6 @@
 package traing.prob339;
 
-import traing.NestedInteger;
+import traing.common.NestedInteger;
 
 import java.util.List;
 

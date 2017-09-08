@@ -1,6 +1,6 @@
 package traing.prob56;
 
-import traing.Interval;
+import traing.common.Interval;
 
 import java.util.ArrayList;
 import java.util.Comparator;

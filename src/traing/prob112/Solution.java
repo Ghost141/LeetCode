@@ -1,6 +1,6 @@
 package traing.prob112;
 
-import traing.TreeNode;
+import traing.common.TreeNode;
 
 /**
  * Path Sum
