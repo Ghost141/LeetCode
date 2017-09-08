@@ -1,6 +1,6 @@
 package traing.prob75;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 /**
@@ -31,6 +31,6 @@ public class Solution {
 
         int[] arr = DataGenerator.createIntArray("2,2");
         s.sortColors(arr);
-        Utils.printai(arr);
+        PrintUtils.printai(arr);
     }
 }

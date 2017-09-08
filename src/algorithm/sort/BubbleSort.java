@@ -1,6 +1,6 @@
 package algorithm.sort;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 /**
  * The bubble sort algorithm implementation.
@@ -27,7 +27,7 @@ public class BubbleSort implements IntArraySort {
     public static void main(String[] args) {
         BubbleSort s = new BubbleSort();
 
-        Utils.printai(s.sort(new int[]{2, 3, 4, 1, 5, 2}));
-        Utils.printai(s.sort(new int[]{5, 4, 3, 2, 1, 0}));
+        PrintUtils.printai(s.sort(new int[]{2, 3, 4, 1, 5, 2}));
+        PrintUtils.printai(s.sort(new int[]{5, 4, 3, 2, 1, 0}));
     }
 }

@@ -1,11 +1,11 @@
-package traing;
+package utils;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
 
-public final class Utils {
+public final class PrintUtils {
 
-    private Utils() {}
+    private PrintUtils() {}
 
     public static void printai(int[] input) {
         final StringJoiner joiner = new StringJoiner(", ");

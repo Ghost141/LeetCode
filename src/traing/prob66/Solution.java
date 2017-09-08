@@ -1,6 +1,6 @@
 package traing.prob66;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 /**
  * Plus One
@@ -36,6 +36,6 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 //        Utils.printai(s.plusOne(new int[] {1}));
-        Utils.printai(s.plusOne(new int[] {9}));
+        PrintUtils.printai(s.plusOne(new int[] {9}));
     }
 }

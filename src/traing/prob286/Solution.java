@@ -1,6 +1,6 @@
 package traing.prob286;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 import java.util.Arrays;
@@ -54,6 +54,6 @@ public class Solution {
 
         int[][] rooms = DataGenerator.createIntMatrix("2147483647,0|0,2147483647");
         s.wallsAndGates(rooms);
-        Utils.printIntMatrix(rooms);
+        PrintUtils.printIntMatrix(rooms);
     }
 }

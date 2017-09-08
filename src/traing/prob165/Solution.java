@@ -1,6 +1,6 @@
 package traing.prob165;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 /**
  * Compare Version Numbers
@@ -36,7 +36,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Utils.printArray("1.".split("\\."));
+        PrintUtils.printArray("1.".split("\\."));
         Solution s = new Solution();
 
         System.out.println(s.compareVersion("1.1", "1"));

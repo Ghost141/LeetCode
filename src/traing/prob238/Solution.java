@@ -1,6 +1,6 @@
 package traing.prob238;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 /**
  * Product of Array Except Self
@@ -29,6 +29,6 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        Utils.printai(s.productExceptSelf(new int[] {1, 0}));
+        PrintUtils.printai(s.productExceptSelf(new int[] {1, 0}));
     }
 }

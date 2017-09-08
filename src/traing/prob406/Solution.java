@@ -1,6 +1,6 @@
 package traing.prob406;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 import java.util.Arrays;
@@ -38,6 +38,6 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        Utils.printIntMatrix(s.reconstructQueue(DataGenerator.createIntMatrix("7,0|4,4|7,1|5,0|6,1|5,2")));
+        PrintUtils.printIntMatrix(s.reconstructQueue(DataGenerator.createIntMatrix("7,0|4,4|7,1|5,0|6,1|5,2")));
     }
 }

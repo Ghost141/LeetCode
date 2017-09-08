@@ -1,6 +1,6 @@
 package traing.prob283;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 /**
  * Move Zeroes
@@ -28,22 +28,22 @@ public class Solution {
 
         int[] data1 = {1, 2, 3, 0};
         s.moveZeroes(data1);
-        Utils.printai(data1);
+        PrintUtils.printai(data1);
 
         int[] data2 = {0, 2, 3, 0};
         s.moveZeroes(data2);
-        Utils.printai(data2);
+        PrintUtils.printai(data2);
 
         final int[] data3 = {1, 2, 0, 3, 0};
         s.moveZeroes(data3);
-        Utils.printai(data3);
+        PrintUtils.printai(data3);
 
         final int[] data4 = {0, 0, 0};
         s.moveZeroes(data4);
-        Utils.printai(data4);
+        PrintUtils.printai(data4);
 
         final int[] data5 = {1, 2, 3};
         s.moveZeroes(data5);
-        Utils.printai(data5);
+        PrintUtils.printai(data5);
     }
 }

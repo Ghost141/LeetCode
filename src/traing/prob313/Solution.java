@@ -1,7 +1,5 @@
 package traing.prob313;
 
-import traing.Utils;
-
 /**
  * Super Ugly Number
  * Link: https://leetcode.com/problems/super-ugly-number/description/

@@ -1,6 +1,6 @@
 package traing.prob370;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 /**
@@ -30,6 +30,6 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        Utils.printai(s.getModifiedArray(10, DataGenerator.createIntMatrix("2,4,6|5,6,8|1,9,-4")));
+        PrintUtils.printai(s.getModifiedArray(10, DataGenerator.createIntMatrix("2,4,6|5,6,8|1,9,-4")));
     }
 }

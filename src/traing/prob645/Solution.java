@@ -1,6 +1,6 @@
 package traing.prob645;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 /**
@@ -34,7 +34,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        Utils.printai(s.findErrorNums(DataGenerator.createIntArray("1,2,2,4")));
-        Utils.printai(s.findErrorNums(DataGenerator.createIntArray("2,3,2")));
+        PrintUtils.printai(s.findErrorNums(DataGenerator.createIntArray("1,2,2,4")));
+        PrintUtils.printai(s.findErrorNums(DataGenerator.createIntArray("2,3,2")));
     }
 }

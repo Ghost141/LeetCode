@@ -1,6 +1,6 @@
 package traing.prob130;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 import java.util.ArrayList;
@@ -74,6 +74,6 @@ public class Solution {
 //        Utils.printCharMatrix(board);
         char[][] board = DataGenerator.createCharBoard("OOO|OOO|OOO");
         s.solve(board);
-        Utils.printCharMatrix(board);
+        PrintUtils.printCharMatrix(board);
     }
 }

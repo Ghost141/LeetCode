@@ -1,6 +1,5 @@
 package traing.prob63;
 
-import traing.Utils;
 import utils.DataGenerator;
 
 /**

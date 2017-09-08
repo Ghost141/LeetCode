@@ -1,7 +1,5 @@
 package traing.prob516;
 
-import traing.Utils;
-
 /**
  * Longest Palindromic Subsequence
  * Link: https://leetcode.com/problems/longest-palindromic-subsequence/description/

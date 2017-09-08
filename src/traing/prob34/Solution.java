@@ -1,6 +1,6 @@
 package traing.prob34;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 /**
@@ -46,10 +46,10 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        Utils.printai(s.searchRange(DataGenerator.createIntArray("5,7,7,8,8,8,8,10"), 4));
-        Utils.printai(s.searchRange(DataGenerator.createIntArray("5,7,7,8,8,8,8,10"), 8));
-        Utils.printai(s.searchRange(DataGenerator.createIntArray("5,7,7,8,8,8,8,10"), 5));
-        Utils.printai(s.searchRange(DataGenerator.createIntArray("1,2,3"), 2));
-        Utils.printai(s.searchRange(DataGenerator.createIntArray("1,2"), 2));
+        PrintUtils.printai(s.searchRange(DataGenerator.createIntArray("5,7,7,8,8,8,8,10"), 4));
+        PrintUtils.printai(s.searchRange(DataGenerator.createIntArray("5,7,7,8,8,8,8,10"), 8));
+        PrintUtils.printai(s.searchRange(DataGenerator.createIntArray("5,7,7,8,8,8,8,10"), 5));
+        PrintUtils.printai(s.searchRange(DataGenerator.createIntArray("1,2,3"), 2));
+        PrintUtils.printai(s.searchRange(DataGenerator.createIntArray("1,2"), 2));
     }
 }

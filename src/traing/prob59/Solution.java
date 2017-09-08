@@ -1,6 +1,6 @@
 package traing.prob59;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 /**
  * Spiral Matrix II
@@ -44,9 +44,9 @@ public class Solution {
         Solution s = new Solution();
 
 //        Utils.printIntMatrix(s.generateMatrix(1));
-        Utils.printIntMatrix(s.generateMatrix(2));
-        Utils.printIntMatrix(s.generateMatrix(3));
-        Utils.printIntMatrix(s.generateMatrix(4));
-        Utils.printIntMatrix(s.generateMatrix(5));
+        PrintUtils.printIntMatrix(s.generateMatrix(2));
+        PrintUtils.printIntMatrix(s.generateMatrix(3));
+        PrintUtils.printIntMatrix(s.generateMatrix(4));
+        PrintUtils.printIntMatrix(s.generateMatrix(5));
     }
 }

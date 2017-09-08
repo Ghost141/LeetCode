@@ -1,6 +1,6 @@
 package traing.prob290;
 
-import traing.Utils;
+import utils.PrintUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Utils.printStrArr("a b".split(" "));
+        PrintUtils.printStrArr("a b".split(" "));
         Solution s = new Solution();
 
         System.out.println(s.wordPattern("abba", "dog  cat cat       dog"));

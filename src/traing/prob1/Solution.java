@@ -2,7 +2,7 @@ package traing.prob1;
 
 import java.util.HashMap;
 
-import static traing.Utils.printai;
+import static utils.PrintUtils.printai;
 
 public class Solution {
 

@@ -1,6 +1,6 @@
 package algorithm.sort;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 import static algorithm.sort.SortUtils.swap;
@@ -68,7 +68,7 @@ public class QuickSelect {
 
         int[] data = DataGenerator.createIntArray("5,1,4,3,2,1,7,3");
         System.out.println(sel.partition(data, 0, data.length - 1));
-        Utils.printai(data);
+        PrintUtils.printai(data);
         System.out.println(sel.select(DataGenerator.createIntArray("5,1,4,3,2,1,7,3"), 2));
     }
 }

@@ -1,6 +1,6 @@
 package traing.prob31;
 
-import traing.Utils;
+import utils.PrintUtils;
 import utils.DataGenerator;
 
 /**
@@ -49,6 +49,6 @@ public class Solution {
         int[] d = DataGenerator.createIntArray("1,2");
 
         s.nextPermutation(d);
-        Utils.printai(d);
+        PrintUtils.printai(d);
     }
 }
