@@ -45,6 +45,22 @@ public class DataGenerator {
         return matrix;
     }
 
+    public static boolean[][] createBooleanMatrix(String s) {
+        if (s.trim().equals("")) return new boolean[][]{};
+        String[] rows = s.toLowerCase().split("\\|");
+        boolean[][] matrix = new boolean[rows.length][rows[0].split(",").length];
+        for (int i = 0; i < rows.length; i++) {
+            String row = rows[i];
+            String[] cols = row.split(",");
+            boolean[] bRow = new boolean[cols.length];
+            for (int j = 0; j < cols.length; j++) {
+                bRow[j] = cols[j].equals("t");
+            }
+            matrix[i] = bRow;
+        }
+        return matrix;
+    }
+
     public static char[][] createCharBoard(String input) {
         if (input.trim().equals("")) return new char[][]{};
         String[] rows = input.split("\\|");
