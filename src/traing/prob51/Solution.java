@@ -1,6 +1,7 @@
 package traing.prob51;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,18 +21,22 @@ public class Solution {
     }
 
     private List<char[]> createEmptyBoard(int n) {
-        StringBuilder builder = new StringBuilder();
         List<char[]> res = new ArrayList<>();
-        for (int i = 0; i < n; i++)
-            builder.append(".");
-        String line = builder.toString();
-        for (int i = 0; i < n; i++)
-            res.add(line.toCharArray());
+        for (int i = 0; i < n; i++){
+            char[] line = new char[n];
+            Arrays.fill(line, '.');
+            res.add(line);
+        }
         return res;
     }
 
     private void gen(List<List<String>> res, List<char[]> board, int row, int n) {
-        if (row == n) res.add(board.stream().map(String::new).collect(Collectors.toList()));
+        if (row == n) {
+            List<String> stringBoard = new ArrayList<>();
+            for (char[] chars : board)
+                stringBoard.add(String.valueOf(chars));
+            res.add(stringBoard);
+        }
         else {
             for (int i = 0; i < n; i++) {
                 if (isValid(board, row, i, n)) {
