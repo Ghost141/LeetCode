@@ -1,6 +1,11 @@
 package utils;
 
+import traing.common.Interval;
 import traing.common.ListNode;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Test data generator
@@ -87,5 +92,12 @@ public class DataGenerator {
             head = n;
         }
         return fakeHead.next;
+    }
+
+    public static List<Interval> listInterval(String s) {
+        return Arrays.stream(s.split("\\|")).map(str -> {
+            String[] pair = str.split(",");
+            return new Interval(Integer.valueOf(pair[0]), Integer.valueOf(pair[1]));
+        }).collect(Collectors.toList());
     }
 }
