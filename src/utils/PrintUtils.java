@@ -16,6 +16,14 @@ public final class PrintUtils {
 
     }
 
+    public static void printCharArray(char[] input) {
+        final StringJoiner joiner = new StringJoiner(", ");
+        for (char i : input) {
+            joiner.add(String.valueOf(i));
+        }
+        System.out.println("result: [" + joiner.toString() + "].");
+    }
+
     public static void printIntMatrix(int[][] matrix) {
         final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < matrix.length; i++) {
