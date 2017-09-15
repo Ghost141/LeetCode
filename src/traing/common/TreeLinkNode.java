@@ -14,4 +14,10 @@ public class TreeLinkNode {
     public TreeLinkNode(int x) {
         val = x;
     }
+
+    public TreeLinkNode(int x, TreeLinkNode left, TreeLinkNode right) {
+        val = x;
+        this.left = left;
+        this.right = right;
+    }
 }
