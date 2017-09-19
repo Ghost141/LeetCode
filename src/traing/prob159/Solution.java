@@ -1,7 +1,7 @@
 package traing.prob159;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Longest Substring with At Most Two Distinct Characters
@@ -14,26 +14,29 @@ import java.util.Set;
 public class Solution {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
         int max = 0;
-        Set<Character> set = new HashSet<>();
-
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i; j < s.length(); j++) {
-                char c = s.charAt(j);
-                if (!set.contains(c) && set.size() == 2) {
-                    set.clear();
-                    break;
-                }
-                else set.add(c);
-                max = Math.max(j - i + 1, max);
+        Map<Character, Integer> map = new HashMap<>();
+        int low = 0, high = 0;
+        while (high < s.length()) {
+            if (map.size() <= 2) {
+                map.put(s.charAt(high), high);
+                high++;
             }
+            if (map.size() == 3) {
+                int min = Integer.MAX_VALUE;
+                for (Integer ind : map.values()) min = Math.min(min, ind);
+                low = min + 1;
+                map.remove(s.charAt(min));
+            }
+            max = Math.max(high - low, max);
         }
 
-        return max;
+        return Math.max(high - low, max);
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        System.out.println(s.lengthOfLongestSubstringTwoDistinct("abcbcbc"));
+//        System.out.println(s.lengthOfLongestSubstringTwoDistinct("abcbcbc"));
+        System.out.println(s.lengthOfLongestSubstringTwoDistinct("eceba"));
     }
 }
