@@ -10,7 +10,7 @@ package traing.prob151;
  */
 public class Solution {
     public String reverseWords(String s) {
-        return reverseV1(s);
+        return inPlaceReverse(s);
     }
 
     /**
@@ -46,11 +46,44 @@ public class Solution {
         return result;
     }
 
+    /**
+     * In-place solution based in this discussion: https://discuss.leetcode.com/topic/3298/in-place-simple-solution/13
+     * @param s given string.
+     * @return reversed string
+     */
+    private String inPlaceReverse(String s) {
+        if (s.length() <= 1) return s;
+        int startInd = 0;
+        char[] str = s.toCharArray();
+        int n = str.length;
+        reverse(str, 0, n - 1);
+        for (int i = 0; i < n; i++) {
+            if (str[i] != ' ') {
+                // All these is for not trim the string.
+                if (startInd != 0) str[startInd++] = ' ';
+                int j = i;
+                while (j < n && str[j] != ' ') str[startInd++] = str[j++];
+                reverse(str, startInd - (j - i), startInd - 1);
+                i = j;
+            }
+        }
+        return new String(str, 0, startInd);
+    }
+
+    private void reverse(char[] str, int begin, int end) {
+        for (; begin < end; begin++, end--) {
+            char tmp = str[begin];
+            str[begin] = str[end];
+            str[end] = tmp;
+        }
+    }
+
     public static void main(String[] args) {
         final Solution s = new Solution();
 
         System.out.println("|" + s.reverseWords(" ") + "|");
         System.out.println("|" + s.reverseWords("a") + "|");
         System.out.println("|" + s.reverseWords("a ") + "|");
+        System.out.println("|" + s.reverseWords("a bcd efgf") + "|");
     }
 }
