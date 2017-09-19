@@ -1,5 +1,13 @@
 package traing.prob151;
 
+/**
+ * Reverse Words in a String
+ * Link: https://leetcode.com/problems/reverse-words-in-a-string/description/
+ *
+ * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 7/11/17
+ */
 public class Solution {
     public String reverseWords(String s) {
         String word = "";
