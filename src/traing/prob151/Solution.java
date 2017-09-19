@@ -10,6 +10,15 @@ package traing.prob151;
  */
 public class Solution {
     public String reverseWords(String s) {
+        return reverseV1(s);
+    }
+
+    /**
+     * My solution for this problem.
+     * @param s given string.
+     * @return reversed string.
+     */
+    private String reverseV1(String s) {
         String word = "";
         String result = "";
         for (int i = 0; i < s.length(); i++) {
