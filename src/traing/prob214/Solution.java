@@ -8,6 +8,7 @@ import utils.PrintUtils;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - Another solution for this problem
  * @since 1.0 - 9/21/17
  */
 public class Solution {
@@ -34,6 +35,14 @@ public class Solution {
             }
         }
         return table;
+    }
+
+    private String recursive(String s) {
+        int j = 0;
+        for (int i = s.length(); i > 0; i--) if (s.charAt(i) == s.charAt(j)) j++;
+        if (j == s.length()) return s;
+        String suffix = s.substring(j);
+        return new StringBuilder(suffix).reverse().toString() + recursive(s.substring(0, j)) + suffix;
     }
 
     public static void main(String[] args) {
