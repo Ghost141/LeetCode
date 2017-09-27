@@ -2,18 +2,25 @@ package utils;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
+import java.util.function.Function;
 
 public final class PrintUtils {
 
     private PrintUtils() {}
 
     public static void printai(int[] input) {
-        final StringJoiner joiner = new StringJoiner(", ");
-        for (int i : input) {
-            joiner.add(String.valueOf(i));
-        }
-        System.out.println("result: [" + joiner.toString() + "].");
+        intArrayPrinter("result").apply(input);
+    }
 
+    public static Function<int[], Void> intArrayPrinter(String name) {
+        return (int[] input) -> {
+            final StringJoiner joiner = new StringJoiner(", ");
+            for (int i : input) {
+                joiner.add(String.valueOf(i));
+            }
+            System.out.println(name + ": [" + joiner.toString() + "].");
+            return null;
+        };
     }
 
     public static void printCharArray(char[] input) {
