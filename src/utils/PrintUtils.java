@@ -23,6 +23,22 @@ public final class PrintUtils {
         };
     }
 
+    public static void print3DIntArr(int[][][] input) {
+        final StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < input.length; i++) {
+            sb.append("[");
+            final StringJoiner joiner = new StringJoiner(", ");
+            for (int j = 0; j < input[0].length; j++) {
+                StringJoiner row = new StringJoiner(",");
+                for (int k = 0; k < input[i][j].length; k++) row.add(String.valueOf(input[i][j][k]));
+                joiner.add("(" + row.toString() + ")");
+            }
+            sb.append(joiner.toString());
+            sb.append("]\n");
+        }
+        System.out.println(sb.toString());
+    }
+
     public static void printCharArray(char[] input) {
         final StringJoiner joiner = new StringJoiner(", ");
         for (char i : input) {
