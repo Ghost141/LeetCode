@@ -79,6 +79,16 @@ public class DataGenerator {
         return board;
     }
 
+    public static String[][] createStringBoard(String input) {
+        if (input.trim().equals("")) return new String[][]{};
+        String[] rows = input.split("\\|");
+        String[][] board = new String[rows.length][rows[0].length()];
+        for (int i = 0; i < rows.length; i++) {
+            board[i] = rows[i].split(",");
+        }
+        return board;
+    }
+
     public static ListNode buildListNode(String s) {
         String[] nodes = s.split("-");
         if (nodes.length == 0) return null;
