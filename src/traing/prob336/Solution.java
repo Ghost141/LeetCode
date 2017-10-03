@@ -1,5 +1,7 @@
 package traing.prob336;
 
+import utils.DataGenerator;
+
 import java.util.*;
 
 /**
@@ -19,24 +21,33 @@ public class Solution {
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
             Node node = this.root;
-            int ind = 0;
+            int j = 0;
             boolean b = false;
-            for (int j = 0; j < word.length(); j++) {
+            Deque<Node> queue = new ArrayDeque<>();
+            int wordLen = word.length();
+            for (; j < wordLen; j++) {
                 char c = word.charAt(j);
-                if (node.nodes[c] != null) node = node.nodes[c];
-                else {
+                if (node.nodes[c] != null) {
+                    node = node.nodes[c];
+                    if (node.word != null && j != wordLen - 1 && isPalindrome(word, j + 1, wordLen - 1)) {
+                        res.add(Arrays.asList(i, node.ind));
+                    }
+                } else {
                     b = true;
                     break;
                 }
-                ind++;
             }
             if (!b) {
-                Deque<Node> queue = new ArrayDeque<>();
                 queue.offer(node);
                 while (!queue.isEmpty()) {
                     Node n = queue.poll();
                     if (n.word != null) {
-                        if (n.ind != i && isPalindrome(n.word, ind, n.word.length() - 1)) res.add(Arrays.asList(i, n.ind));
+                        if (n.ind != i && isPalindrome(n.word, j, n.word.length() - 1)) {
+                            res.add(Arrays.asList(i, n.ind));
+                            if (wordLen == 0) { // Word is empty
+                                res.add(Arrays.asList(n.ind, i));
+                            }
+                        }
                     }
                     for (Node next : n.nodes) if (next != null) queue.offer(next);
                 }
@@ -72,7 +83,9 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-//        System.out.println(s.palindromePairs("bat,tab,cat".split(",")));
+        System.out.println(s.palindromePairs("bat,tab,cat".split(",")));
+        System.out.println(s.palindromePairs(new String[] {"a", ""}));
+        System.out.println(s.palindromePairs("a,b,c,ab,ac,aa".split(",")));
         System.out.println(s.palindromePairs("abcd,dcba,lls,s,sssll".split(",")));
 //        System.out.println(s.palindromePairs(new String[]{"ib", "cjcehd", "dfjcahcehhdf", "gh", "ideabce",
 //                "accfcdhjfhebigh", "cbjchaeiiciefceg", "hg", "abj", "dddcdjbefdeceedafhfi", "jbgdi", "aejbjiedecggdbbd",
