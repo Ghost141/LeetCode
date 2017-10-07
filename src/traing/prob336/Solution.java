@@ -27,8 +27,8 @@ public class Solution {
             int wordLen = word.length();
             for (; j < wordLen; j++) {
                 char c = word.charAt(j);
-                if (node.nodes[c] != null) {
-                    node = node.nodes[c];
+                if (node.nodes[c - 'a'] != null) {
+                    node = node.nodes[c - 'a'];
                     if (node.word != null && j != wordLen - 1 && isPalindrome(word, j + 1, wordLen - 1)) {
                         res.add(Arrays.asList(i, node.ind));
                     }
@@ -59,8 +59,8 @@ public class Solution {
         Node node = this.root;
         for (int i = word.length() - 1; i >= 0; i--) {
             char c = word.charAt(i);
-            if (node.nodes[c] == null) node.nodes[c] = new Node();
-            node = node.nodes[c];
+            if (node.nodes[c - 'a'] == null) node.nodes[c - 'a'] = new Node();
+            node = node.nodes[c - 'a'];
         }
         node.word = new StringBuilder(word).reverse().toString();
         node.ind = ind;
@@ -72,7 +72,7 @@ public class Solution {
     }
 
     class Node {
-        Node[] nodes = new Node[256];
+        Node[] nodes = new Node[26];
         String word = null;
         int ind = 0;
 
