@@ -11,6 +11,7 @@ import java.util.PriorityQueue;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - The binary search version.
  * @since 1.0 - 10/9/17
  */
 public class Solution {
@@ -38,6 +39,21 @@ public class Solution {
         public int compareTo(Element o) {
             return Integer.compare(this.val, o.val);
         }
+    }
+
+    private int binarySearch(int[][] matrix, int k) {
+        int low = matrix[0][0], high = matrix[matrix.length - 1][matrix.length - 1];
+        while (low < high) {
+            int j = matrix.length - 1, count = 0;
+            int mid = low + (high - low) / 2;
+            for (int i = 0; i < matrix.length; i++) {
+                while (j >= 0 && matrix[i][j] > mid) j--;
+                count += (j + 1);
+            }
+            if (count > k) low = mid + 1;
+            else high = mid;
+        }
+        return low;
     }
 
     public static void main(String[] args) {
