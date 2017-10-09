@@ -49,11 +49,16 @@ public final class PrintUtils {
 
     public static void printIntMatrix(int[][] matrix) {
         final StringBuilder sb = new StringBuilder();
+        int max = Integer.MIN_VALUE;
+        for (int[] row : matrix)
+            for (int num : row)
+                max = Math.max(max, num);
+        int len = String.valueOf(max).length();
         for (int i = 0; i < matrix.length; i++) {
             sb.append("[");
             final StringJoiner joiner = new StringJoiner(", ");
             for (int j = 0; j < matrix[0].length; j++) {
-                joiner.add(String.valueOf(matrix[i][j]));
+                joiner.add(String.format("%" + len + "d", matrix[i][j]));
             }
             sb.append(joiner.toString());
             sb.append("]\n");
