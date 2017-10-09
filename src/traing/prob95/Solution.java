@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://leetcode.com/problems/unique-binary-search-trees-ii/description/
- * Link: Unique Binary Search Trees II
+ * Unique Binary Search Trees II
+ * Link: https://leetcode.com/problems/unique-binary-search-trees-ii/description/
  *
  * @author zhaokai
  * @version 1.0
