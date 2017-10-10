@@ -8,6 +8,7 @@ import utils.DataGenerator;
  *
  * @author zhaokai
  * @version 1.0
+ * @version 1.1 - O(N) dp solution.
  * @since 1.0 - 10/10/17
  */
 public class Solution {
@@ -32,6 +33,15 @@ public class Solution {
         }
 
         return res;
+    }
+
+    private int wiggle(int[] nums) {
+        int down = 1, up = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) up = down + 1;
+            else if (nums[i] < nums[i - 1]) down = up + 1;
+        }
+        return Math.max(up, down);
     }
 
     public static void main(String[] args) {
