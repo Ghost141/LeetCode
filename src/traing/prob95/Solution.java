@@ -27,15 +27,15 @@ public class Solution {
         G[0] = g0;
         G[1] = g1;
 
-        for (int i = 2; i <= n; i++) {
-            G[i] = new ArrayList<>();
-            for (int j = 1; j <= i; j++) {
+        for (int len = 2; len <= n; len++) {
+            G[len] = new ArrayList<>();
+            for (int j = 1; j <= len; j++) {
                 for (TreeNode left : G[j - 1]) {
-                    for (TreeNode right : G[i - j]) {
+                    for (TreeNode right : G[len - j]) {
                         TreeNode root = new TreeNode(j);
                         root.left = left;
                         root.right = generateOffsetTree(right, j);
-                        G[i].add(root);
+                        G[len].add(root);
                     }
                 }
             }
