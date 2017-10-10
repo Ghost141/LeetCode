@@ -23,6 +23,21 @@ public final class PrintUtils {
         };
     }
 
+    public static void printDoubleArray(double[] input) {
+        doubleArrayPrinter("result").apply(input);
+    }
+
+    public static Function<double[], Void> doubleArrayPrinter(String name) {
+        return (double[] input) -> {
+            final StringJoiner joiner = new StringJoiner(", ");
+            for (double i : input) {
+                joiner.add(String.valueOf(i));
+            }
+            System.out.println(name + ": [" + joiner.toString() + "].");
+            return null;
+        };
+    }
+
     public static void print3DIntArr(int[][][] input) {
         final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length; i++) {
