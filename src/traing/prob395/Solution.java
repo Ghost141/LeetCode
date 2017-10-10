@@ -1,7 +1,8 @@
 package traing.prob395;
 
 /**
- * Link:
+ * Longest Substring with At Least K Repeating Characters
+ * Link: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/
  *
  * @author zhaokai
  * @version 1.0
