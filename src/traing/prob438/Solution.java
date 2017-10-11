@@ -8,44 +8,32 @@ import java.util.*;
  *
  * @author zhaokai
  * @version 1.0 - TLE
+ * @version 1.1 - Accepted. Sliding window tech.
  * @since 1.0 - 6/27/17
  */
 public class Solution {
     public List<Integer> findAnagrams(String s, String p) {
+        if (s.length() == 0 || p.length() == 0 || p.length() > s.length()) return new ArrayList<>();
         List<Integer> result = new ArrayList<>();
-        Map<String, Integer> map = new HashMap<>();
 
-        for (int j = 0; j < p.length(); j++) {
-            final String c = p.substring(j, j + 1);
-            if (map.containsKey(c)) {
-                map.put(c, map.get(c) + 1);
-            } else {
-                map.put(c, 1);
-            }
+        int[] window = new int[26];
+        for (int i = 0; i < p.length(); i++) {
+            window[p.charAt(i) - 'a']++;
+            window[s.charAt(i) - 'a']--;
         }
 
-        for (int i = 0; i < s.length() - p.length() + 1; i++) {
-            int offset = 0;
-            Map<String, Integer> subMap = new HashMap<>();
-            for (int j = 0; j < p.length(); j++) {
-                int searchInd = i + offset;
-                final String si = s.substring(searchInd, searchInd + 1);
-
-                Integer subCount = subMap.get(si);
-                subCount = subCount == null ? 0 : subCount;
-                if (p.contains(si) && subCount + 1 <= map.get(si)) {
-                    subMap.put(si, subCount + 1);
-                } else {
-                    break;
-                }
-
-                offset++;
-                if (j == p.length() - 1) {
-                    result.add(i);
-                }
-            }
+        for (int i = p.length(); i < s.length(); i++) {
+            if (allZero(window)) result.add(i - p.length());
+            window[s.charAt(i) - 'a']--;
+            window[s.charAt(i - p.length()) - 'a']++;
         }
+        if (allZero(window)) result.add(s.length() - p.length());
+
         return result;
+    }
+    private boolean allZero(int[] nums) {
+        for (int num : nums) if (num != 0) return false;
+        return true;
     }
 
     public static void main(String[] args) {
