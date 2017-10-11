@@ -1,6 +1,8 @@
 package traing.prob456;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -10,6 +12,7 @@ import java.util.List;
  * @author zhaokai
  * @version 1.0 - Better brute force solution.
  * @version 1.1 - Searching Intervals
+ * @version 1.2 - Stack
  * @since 1.0 - 10/11/17
  */
 public class Solution {
@@ -40,6 +43,22 @@ public class Solution {
             for (int[] range : ranges)
                 if (nums[i] > range[0] && nums[i] < range[1]) return true;
             i++;
+        }
+        return false;
+    }
+
+    private boolean stack(int[] nums) {
+        if (nums.length < 3) return false;
+        int[] min = new int[nums.length];
+        min[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) min[i] = Math.min(min[i - 1], nums[i]);
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int j = nums.length - 1; j >= 0; j--) {
+            if (nums[j] > min[j]) {
+                while (!stack.isEmpty() && stack.peek() <= min[j]) stack.pop();
+                if (!stack.isEmpty() && stack.peek() < nums[j]) return true;
+                stack.push(nums[j]);
+            }
         }
         return false;
     }
