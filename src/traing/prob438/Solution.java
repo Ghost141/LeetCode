@@ -2,6 +2,14 @@ package traing.prob438;
 
 import java.util.*;
 
+/**
+ * Find All Anagrams in a String
+ * Link: https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
+ *
+ * @author zhaokai
+ * @version 1.0 - TLE
+ * @since 1.0 - 6/27/17
+ */
 public class Solution {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> result = new ArrayList<>();
