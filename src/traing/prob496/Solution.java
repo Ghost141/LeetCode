@@ -4,6 +4,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Next Greater Element I
+ * Link: https://leetcode.com/problems/next-greater-element-i/description/
+ *
+ * @author zhaokai
+ * @version 1.0 - Failed to implement.
+ * @since 1.0 - 6/20/17
+ */
 public class Solution {
     /**
      * Failed implementation. I failed to understand problem description.
