@@ -7,6 +7,8 @@ import utils.PrintUtils;
  * Link: https://leetcode.com/problems/move-zeroes/#/description
  *
  * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 7/26/17
  */
 public class Solution {
     public void moveZeroes(int[] nums) {
