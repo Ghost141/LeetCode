@@ -1,7 +1,12 @@
 package traing.prob190;
 
 /**
- * AC
+ * Design Reverse Bits
+ * Link: https://leetcode.com/problems/reverse-bits/description/
+ *
+ * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 6/20/17
  */
 public class Solution {
     public int reverseBits(int n) {
