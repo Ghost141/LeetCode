@@ -1,6 +1,5 @@
 package traing.prob496;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,39 +9,25 @@ import java.util.Map;
  *
  * @author zhaokai
  * @version 1.0 - Failed to implement.
+ * @version 1.1 - Better brute force solution by using Hash Table.
  * @since 1.0 - 6/20/17
  */
 public class Solution {
-    /**
-     * Failed implementation. I failed to understand problem description.
-     * @param findNums
-     * @param nums
-     * @return
-     */
     public int[] nextGreaterElement(int[] findNums, int[] nums) {
-        Map<Integer, Integer> indexMap = new HashMap<>();
-        final int length = nums.length;
-        for (int i = 0; i < length; i++) {
-            indexMap.put(nums[i], i);
-        }
-        Arrays.sort(nums);
-        Map<Integer, Integer> greaterMap = new HashMap<>();
-
-        for (int i = 0; i < length; i++) {
-            if (i == length - 1) {
-                // The last one. also the max one.
-
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] res = new int[findNums.length];
+        for (int i = 0; i < nums.length; i++) map.put(nums[i], i);
+        for (int i = 0; i < findNums.length; i++) {
+            int ind = -1;
+            for (int j = map.get(findNums[i]) + 1; j < nums.length; j++) {
+                if (nums[j] > findNums[i]) {
+                    ind = j;
+                    break;
+                }
             }
-            greaterMap.put(nums[i], i == length - 1 ? -1 : nums[i + 1]);
+            res[i] = ind == -1 ? -1 : nums[ind];
         }
 
-        final int findLength = findNums.length;
-        int[] result = new int[findLength];
-
-        for (int i = 0; i < findLength; i++) {
-            result[i] = greaterMap.get(findNums[i]);
-        }
-
-        return result;
+        return res;
     }
 }
