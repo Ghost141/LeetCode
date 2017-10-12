@@ -1,11 +1,14 @@
 package traing.prob503;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * Next Greater Element II
  * Link: https://leetcode.com/problems/next-greater-element-ii/description/
  *
  * @author zhaokai
- * @version 1.0 - Brute force solution.
+ * @version 1.1 - Using Stack.
  * @since 1.0 - 10/12/17
  */
 public class Solution {
@@ -26,6 +29,18 @@ public class Solution {
                 }
             }
             res[i] = ind == -1 ? -1 : nums[(j + count) % nums.length];
+        }
+        return res;
+    }
+
+    private int[] stack(int[] nums) {
+        int n = nums.length;
+        int[] res = new int[n];
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int i = 2 * n - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && nums[stack.peek()] <= nums[i % n]) stack.pop();
+            res[i % n] = stack.isEmpty() ? -1 : nums[stack.peek()];
+            stack.push(i % n);
         }
         return res;
     }
