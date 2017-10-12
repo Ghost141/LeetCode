@@ -2,7 +2,7 @@ package traing.prob41;
 
 /**
  * First Missing Positive
- * Link:
+ * Link: https://leetcode.com/problems/first-missing-positive/description/
  *
  * @author zhaokai
  * @version 1.0
