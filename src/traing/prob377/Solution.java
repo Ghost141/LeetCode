@@ -5,6 +5,7 @@ import utils.DataGenerator;
 /**
  * Combination Sum IV
  * Link: https://leetcode.com/problems/combination-sum-iv/description/
+ * I didn't realize before this problem is actually a knapsack problem.
  *
  * @author zhaokai
  * @version 1.0
