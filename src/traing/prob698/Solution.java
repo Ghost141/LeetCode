@@ -21,9 +21,7 @@ public class Solution {
 
         for (int num : nums) {
             for (int i = volume; i >= num; i--) {
-                if (dp[i - num] > 0) {
-                    dp[i] += dp[i - num];
-                }
+                dp[i] += dp[i - num];
             }
         }
         return dp[volume] >= k;
