@@ -7,7 +7,7 @@ import utils.DataGenerator;
  * Link:
  *
  * @author zhaokai
- * @version 1.0
+ * @version 1.0 - The knapsack solution I used is problematic. It won't pass the test case [1,1,1,1,1,1,6] 4.
  * @since 1.0 - 10/15/17
  */
 public class Solution {
