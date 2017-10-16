@@ -1,14 +1,11 @@
 package traing.prob526;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Beautiful Arrangement
  * Link: https://leetcode.com/problems/beautiful-arrangement/description/
  *
  * @author zhaokai
- * @version 1.0
+ * @version 1.1 - Better backtracking. 1) Backtrack from the end. The higher number got more chance to fail. 2) swap the number instead of using a boolean array.
  * @since 1.0 - 10/16/17
  */
 public class Solution {
@@ -26,7 +23,7 @@ public class Solution {
     private void _backtrack(int pos, int N, boolean[] visited, int[] count) {
         if (pos > N) count[0]++;
         else {
-            for (int i =1;i <= N; i++) {
+            for (int i = 1; i <= N; i++) {
                 if (!visited[i] && (i % pos == 0 || pos % i == 0)) {
                     visited[i] = true;
                     _backtrack(pos + 1, N, visited, count);
@@ -34,6 +31,31 @@ public class Solution {
                 }
             }
         }
+    }
+
+    private int betterBacktrack(int N) {
+        int[] num = new int[N + 1];
+        for (int i = 1; i <= N; i++) num[i] = i;
+        int[] count = new int[1];
+        _betterBacktrack(num, N, count);
+        return count[0];
+    }
+
+    private void _betterBacktrack(int[] num, int start, int[] count) {
+        if (start == 0) count[0]++;
+        else {
+            for (int i = start; i > 0; i--) {
+                swap(num, start, i);
+                if (num[start] % start == 0 || start % num[start] == 0) _betterBacktrack(num, start - 1, count);
+                swap(num, i, start);
+            }
+        }
+    }
+
+    private void swap(int[] num, int i, int j) {
+        int temp = num[i];
+        num[i] = num[j];
+        num[j] = temp;
     }
 
     public static void main(String[] args) {
