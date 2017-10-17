@@ -1,5 +1,13 @@
 package traing.prob67;
 
+/**
+ * Add Binary
+ * Link: https://leetcode.com/problems/add-binary/description/
+ *
+ * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 7/17/17
+ */
 public class Solution {
     public String addBinary(String a, String b) {
         final StringBuilder sb = new StringBuilder();
