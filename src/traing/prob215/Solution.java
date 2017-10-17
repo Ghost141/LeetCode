@@ -19,7 +19,7 @@ public class Solution {
         int i = start, j = end;
         int pivot = data[end];
         while (i < j) {
-            if (data[i] > pivot) {
+            if (data[i] < pivot) {
                 swap(data, i, --j);
             } else i++;
         }
