@@ -1,4 +1,4 @@
-package algorithm.graph;
+package algorithm.graph.unionfind;
 
 /**
  * Union-Find Algorithm
