@@ -13,6 +13,10 @@ import java.util.*;
  */
 public class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        return twoEndBFS(beginWord, endWord, wordList);
+    }
+
+    private int twoEndBFS(String beginWord, String endWord, List<String> wordList) {
         if (!wordList.contains(endWord)) return 0;
         Set<String> beginSet = new HashSet<>(), endSet = new HashSet<>(), dic = new HashSet<>(wordList)
                 , visited = new HashSet<>();
@@ -44,17 +48,6 @@ public class Solution {
             beginSet = tmp;
         }
         return 0;
-    }
-
-    private boolean isOneLetterDiff(String word1, String word2) {
-        boolean diff = false;
-        for (int i = 0; i < word1.length(); i++) {
-            if (word1.charAt(i) != word2.charAt(i)) {
-                if (diff) return false;
-                else diff = true;
-            }
-        }
-        return diff;
     }
 
     public static void main(String[] args) {
