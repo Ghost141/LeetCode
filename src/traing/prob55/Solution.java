@@ -2,8 +2,11 @@ package traing.prob55;
 
 /**
  * Jump Game
+ * Link: https://leetcode.com/problems/jump-game/description/
  *
  * @author zhaokai
+ * @version 1.0
+ * @since 1.0 - 7/18/17
  */
 public class Solution {
     public boolean canJump(int[] nums) {
