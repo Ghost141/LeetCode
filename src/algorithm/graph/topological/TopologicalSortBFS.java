@@ -5,6 +5,9 @@ import java.util.Deque;
 import java.util.HashSet;
 import java.util.Set;
 
+import static algorithm.graph.GraphConstant.DESTINATION;
+import static algorithm.graph.GraphConstant.SOURCE;
+
 /**
  * BFS version topological sort
  *
@@ -19,9 +22,9 @@ public class TopologicalSortBFS extends BaseTopologicalSort {
         Set<Integer>[] adjacent = new Set[n];
         Deque<Integer> queue = new ArrayDeque<>();
         for (int[] edge : edges) {
-            indegree[edge[0]]++;
-            if (adjacent[edge[1]] == null) adjacent[edge[1]] = new HashSet<>();
-            adjacent[edge[1]].add(edge[0]);
+            indegree[edge[DESTINATION]]++;
+            if (adjacent[edge[SOURCE]] == null) adjacent[edge[SOURCE]] = new HashSet<>();
+            adjacent[edge[SOURCE]].add(edge[DESTINATION]);
         }
         for (int i = 0; i < indegree.length; i++) if (indegree[i] == 0) queue.offer(i);
         while (!queue.isEmpty()) {

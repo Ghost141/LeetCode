@@ -1,5 +1,9 @@
 package algorithm.graph.path;
 
+import static algorithm.graph.GraphConstant.DESTINATION;
+import static algorithm.graph.GraphConstant.SOURCE;
+import static algorithm.graph.GraphConstant.WEIGHT;
+
 /**
  * The Bellman-Ford algorithm.
  *
@@ -16,7 +20,7 @@ public class BellmanFord extends BasePath {
         for (int i = 0; i < n; i++) {
             for (int[] edge : edges) {
                 int src = edge[SOURCE];
-                int des = edge[DESTNATION];
+                int des = edge[DESTINATION];
                 int wei = edge[WEIGHT];
                 if (distance[src] != Integer.MAX_VALUE && distance[src] + wei < distance[des])
                     distance[des] = distance[src] + wei;
@@ -25,7 +29,7 @@ public class BellmanFord extends BasePath {
 
         for (int[] edge : edges) {
             if (distance[edge[SOURCE]] != Integer.MAX_VALUE
-                    && distance[edge[SOURCE]] + edge[WEIGHT] < distance[DESTNATION])
+                    && distance[edge[SOURCE]] + edge[WEIGHT] < distance[DESTINATION])
                 System.err.println("Negative loop found!!!");
         }
     }

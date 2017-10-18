@@ -8,7 +8,5 @@ package algorithm.graph.path;
  * @since 1.0 - 10/18/17
  */
 public abstract class BasePath {
-    public static final int SOURCE = 0;
-    public static final int DESTNATION = 1;
-    public static final int WEIGHT = 2;
+    abstract public void calculate(int source, int n, int[][] edges);
 }
