@@ -9,4 +9,9 @@ package algorithm.graph.path;
  */
 public abstract class BasePath {
     abstract public void calculate(int source, int n, int[][] edges);
+
+    public void initialize(int[] distance, int source) {
+        for (int i = 0; i < distance.length; i++) distance[i] = Integer.MAX_VALUE;
+        distance[source] = 0;
+    }
 }
