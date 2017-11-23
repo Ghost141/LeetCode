@@ -6,13 +6,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
+ * Airbnb interview question.
  * @author zhaokai
  * @version 1.0
  * @since 1.0 - 11/23/17
  */
 public class IntervalMaxSum {
     public int maxSum(int[][] dates, int maxDay) {
+        return bruteForceWithMemorization(dates);
+    }
+
+    private int bruteForceWithMemorization(int[][] dates) {
         Map<String, Integer> memo = new HashMap<>();
         return sum(dates, new int[] {-1, -1}, 0, memo);
     }
