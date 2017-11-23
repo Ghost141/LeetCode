@@ -14,9 +14,14 @@ import java.util.Comparator;
  * @since 1.0 - 11/23/17
  */
 public class Solution {
-    private static final Comparator<Interval> comparator = Comparator.comparingInt(a -> a.start);
+    private static final Comparator<Interval> START_COMPARATOR = Comparator.comparingInt(a -> a.start);
+    private static final Comparator<Interval> END_COMPARATOR = Comparator.comparingInt(a -> a.end);
     public int eraseOverlapIntervals(Interval[] intervals) {
-        Arrays.sort(intervals, comparator);
+        return bruteForce(intervals);
+    }
+
+    private int bruteForce(Interval[] intervals) {
+        Arrays.sort(intervals, START_COMPARATOR);
         return remove(intervals, -1, 0);
     }
 
