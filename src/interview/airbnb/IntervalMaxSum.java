@@ -2,6 +2,8 @@ package interview.airbnb;
 
 import utils.DataGenerator;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +15,30 @@ import java.util.Map;
  */
 public class IntervalMaxSum {
     public int maxSum(int[][] dates, int maxDay) {
-        return bruteForceWithMemorization(dates);
+        return dp(dates, maxDay);
+    }
+
+    private int dp(int[][] dates, int maxDay) {
+        Arrays.sort(dates, Comparator.comparingInt(date -> date[0]));
+        int[] dp = new int[dates.length];
+        dp[0] = len(dates[0]);
+        int ans = 0;
+
+        for (int i = 1; i < dates.length; i++) {
+            int max = 0;
+            for (int j = i - 1; j >= 0; j--) {
+                if (dates[i][0] >= dates[j][1]) {
+                    max = Math.max(max, dp[j]);
+                }
+            }
+            dp[i] = max + len(dates[i]);
+            ans = Math.max(dp[i], ans);
+        }
+        return ans;
+    }
+
+    private int len(int[] date) {
+        return date[1] - date[0];
     }
 
     private int bruteForceWithMemorization(int[][] dates) {
